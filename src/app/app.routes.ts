@@ -1,3 +1,8 @@
 import { Routes } from '@angular/router';
-
-export const routes: Routes = [];
+import { LandingComponent } from './pages/landing/landing.component';
+import  { DashboardComponent } from './pages/dashboard/dashboard.component';
+export const routes: Routes = [
+  { path: '', component: LandingComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' } // Redirect unknown routes to landing page
+];

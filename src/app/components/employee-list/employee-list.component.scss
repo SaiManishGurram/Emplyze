@@ -1,0 +1,113 @@
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 1rem;
+  }
+  
+  
+  .search-box {
+    // font-size: ;
+    display: flex;
+    justify-content: center;
+    width: 30%; // Adjust width
+    margin-top: 10px;
+    mat-form-field {
+      width: 20%; // Adjust width
+      margin: 0;
+      padding: 0;
+  
+      .mat-mdc-text-field-wrapper {
+        height: 32px !important; // Reduce field height
+        border-radius: 20px; // Make it rounded
+        padding: 0;
+      }
+  
+      .mat-mdc-form-field-infix {
+        min-height: 24px !important; // Reduce internal height
+        padding: 4px 8px !important;
+      }
+  
+      input {
+        height: 24px !important;
+        font-size: 14px;
+        padding: 2px 6px !important;
+      }
+    }
+  }
+  
+  
+  
+  .add-button {
+    white-space: nowrap;
+    margin-left: auto;
+  }
+  
+  table {
+  background: none !important; // No background
+  box-shadow: none !important; // Remove any shadow if exists
+
+  th, td {
+    background: none !important; // Remove cell backgrounds
+  }
+
+  
+
+}
+
+.mat-paginator-container {
+    background: none !important;
+  }
+.list-container {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 1rem;
+}
+
+.add-btn {
+    font-size: 0.9rem;
+    padding: 10px 40px;
+    border-radius: 10px;
+    background: #2563EB;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    font-weight: 500;
+
+    &:hover {
+      background: #1E40AF;
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .icon-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 4px;
+    transition: transform 0.2s ease-in-out;
+  
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  
+  .edit-icon mat-icon {
+    color: var(--mat-palette-primary, #1976d2); // Uses Angular Material primary color
+  }
+  
+  .delete-icon mat-icon {
+    margin-left: 10px;
+    color: var(--mat-palette-warn, #d32f2f); // Uses Angular Material warning color
+  }
+  
+  

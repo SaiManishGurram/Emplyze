@@ -1,0 +1,37 @@
+<h2 mat-dialog-title>{{ title }}</h2>
+<div mat-dialog-content>
+  <form [formGroup]="employeeForm" (ngSubmit)="submit()" class="employee-form">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" formControlName="name" required />
+      <mat-error *ngIf="employeeForm.controls['name']?.invalid && employeeForm.controls['name']?.touched">
+        Name is required (min 3 characters).
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Position</mat-label>
+      <mat-select formControlName="position" required>
+        <mat-option *ngFor="let position of positions" [value]="position">
+          {{ position }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="employeeForm.controls['position']?.invalid && employeeForm.controls['position']?.touched">
+        Position is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Salary</mat-label>
+      <input matInput type="number" formControlName="salary" required />
+      <mat-error *ngIf="employeeForm.controls['salary']?.invalid && employeeForm.controls['salary']?.touched">
+        Salary must be a positive number.
+      </mat-error>
+    </mat-form-field>
+
+    <div class="button-group">
+      <button mat-button (click)="close()">Cancel</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="employeeForm.invalid">Submit</button>
+    </div>
+  </form>
+</div>

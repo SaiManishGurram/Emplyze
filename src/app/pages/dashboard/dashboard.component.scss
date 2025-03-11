@@ -1,0 +1,31 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    text-align: center;
+    background: linear-gradient(135deg, #E0F2FE, #BFDBFE); // Light Blue Gradient
+    color: #ffffff;
+    padding: 20px;
+  }
+  
+
+  
+  .dashboard-content {
+    width: 90%;
+    max-width: 1200px;
+    // background: rgba(255, 255, 255, 0.15); // Slight transparency for contrast
+    backdrop-filter: blur(8px); // Blurred glass effect
+    border-radius: 12px;
+    padding: 20px;
+    // box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .employee-table {
+    // background: #ffffff; // White background for table readability
+    color: #000000;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
