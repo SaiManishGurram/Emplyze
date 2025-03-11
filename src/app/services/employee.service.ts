@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 import { Employee } from '../models/employee.model';
 import { HttpClient } from '@angular/common/http';
 import { catchError, debounceTime, map } from 'rxjs/operators';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +12,7 @@ export class EmployeeService {
   private employeesKey = 'employees';
   private jsonUrl = '/employees.json'; // Path to JSON file in public folder
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private snackBar: MatSnackBar) {}
 
   getEmployees(): Observable<Employee[]> {
     const storedEmployees = localStorage.getItem(this.employeesKey);
@@ -43,6 +44,7 @@ export class EmployeeService {
     employee.id = employees.length > 0 ? Math.max(...employees.map((emp) => emp.id || 0)) + 1 : 1;
     employees.push(employee);
     localStorage.setItem(this.employeesKey, JSON.stringify(employees));
+    this.showToast('Employee added successfully!');
   }
 
   updateEmployee(updatedEmployee: Employee): void {
@@ -52,15 +54,25 @@ export class EmployeeService {
       storedEmployees[index] = updatedEmployee;
     }
     localStorage.setItem(this.employeesKey, JSON.stringify(storedEmployees));
+    this.showToast('Employee updated successfully!');
   }
 
   deleteEmployee(employeeId: number): void {
     const employees = this.getStoredEmployees().filter((emp) => emp.id !== employeeId);
     localStorage.setItem(this.employeesKey, JSON.stringify(employees));
+    this.showToast('Employee deleted successfully!');
   }
 
   private getStoredEmployees(): Employee[] {
     const employees = localStorage.getItem(this.employeesKey);
     return employees ? JSON.parse(employees) : [];
+  }
+
+  showToast(message: string) {
+    this.snackBar.open(message, 'Close', {
+      duration: 4000,
+      verticalPosition: 'top',
+      horizontalPosition: 'right'
+    });
   }
 }

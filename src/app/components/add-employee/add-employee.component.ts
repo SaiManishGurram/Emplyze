@@ -28,7 +28,19 @@ import { Employee } from '../../models/employee.model';
 export class AddEmployeeComponent implements OnInit {
   private dialogRef = inject(MatDialogRef<AddEmployeeComponent>);
   employeeForm!: FormGroup;
-  positions: string[] = ['Manager', 'Developer', 'Designer', 'Sales', 'HR'];
+  positions: string[] = [
+    'Manager',
+    'Developer',
+    'Designer',
+    'Sales',
+    'HR',
+    'QA Engineer',
+    'DevOps Engineer',
+    'Product Manager',
+    'Support Engineer',
+    'Frontend Developer',
+    'Backend Developer'
+  ]; 
   title: string;
   originalEmployee: any;
 
