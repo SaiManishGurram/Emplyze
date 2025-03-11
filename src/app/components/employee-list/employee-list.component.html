@@ -53,7 +53,11 @@
     <tr mat-row *matRowDef="let row; columns: ['id', 'name', 'position', 'salary', 'actions'];"></tr>
 
   </table>
-
+  <!-- Empty Table Message -->
+  <div class="empty-table-message" *ngIf="dataSource && dataSource.filteredData.length === 0">
+    No employees found
+  </div>
+  
   <!-- Pagination -->
   <mat-paginator class="mat-paginator-container" [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
 </div>
