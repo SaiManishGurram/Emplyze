@@ -22,8 +22,7 @@ The **Emplyze** is a web application designed for HR professionals to manage emp
 
 ### 1. Clone the Repository
 ```sh
-git clone https://github.com/your-repo/employee-management-dashboard.git  
-cd employee-management-dashboard  
+git clone https://github.com/SaiManishGurram/Emplyze
 ```
 
 ### 2. Install Dependencies
