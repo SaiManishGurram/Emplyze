@@ -30,6 +30,7 @@ export class AddEmployeeComponent implements OnInit {
   employeeForm!: FormGroup;
   positions: string[] = ['Manager', 'Developer', 'Designer', 'Sales', 'HR'];
   title: string;
+  originalEmployee: any;
 
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: { employee?: Employee }) {
@@ -37,12 +38,17 @@ export class AddEmployeeComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Create a deep copy of the employee object
+    this.originalEmployee = this.data?.employee ? JSON.parse(JSON.stringify(this.data.employee)) : null;
+  
+    // Initialize form with the copied data
     this.employeeForm = new FormGroup({
-      name: new FormControl(this.data?.employee?.name || '', [Validators.required, Validators.minLength(3)]),
-      position: new FormControl(this.data?.employee?.position || '', Validators.required),
-      salary: new FormControl(this.data?.employee?.salary || '', [Validators.required, Validators.pattern(/^[1-9]\d*$/)]),
+      name: new FormControl(this.originalEmployee?.name || '', [Validators.required, Validators.minLength(3)]),
+      position: new FormControl(this.originalEmployee?.position || '', Validators.required),
+      salary: new FormControl(this.originalEmployee?.salary || '', [Validators.required, Validators.pattern(/^[1-9]\d*$/)]),
     });
   }
+  
 
   submit() {
     if (this.employeeForm.valid) {
@@ -50,7 +56,9 @@ export class AddEmployeeComponent implements OnInit {
     }
   }
 
-  close() {
-    this.dialogRef.close();
-  }
+  close():void  {
+    if (this.originalEmployee) {
+      this.employeeForm.patchValue(this.originalEmployee);
+    }
+    this.dialogRef.close();  }
 }
