@@ -1,0 +1,23 @@
+[
+    { "id": 1, "name": "John Doe", "position": "Developer", "salary": 50000 },
+    { "id": 2, "name": "Jane Smith", "position": "Manager", "salary": 60000 },
+    { "id": 3, "name": "Alice Johnson", "position": "Designer", "salary": 55000 },
+    { "id": 4, "name": "Bob Williams", "position": "HR", "salary": 48000 },
+    { "id": 5, "name": "Charlie Brown", "position": "QA Engineer", "salary": 51000 },
+    { "id": 6, "name": "David Miller", "position": "Developer", "salary": 53000 },
+    { "id": 7, "name": "Emma Davis", "position": "Manager", "salary": 62000 },
+    { "id": 8, "name": "Frank Wilson", "position": "DevOps Engineer", "salary": 58000 },
+    { "id": 9, "name": "Grace Lee", "position": "Product Manager", "salary": 65000 },
+    { "id": 10, "name": "Henry Clark", "position": "Support Engineer", "salary": 47000 },
+    { "id": 11, "name": "Ivy White", "position": "Designer", "salary": 54000 },
+    { "id": 12, "name": "Jack Taylor", "position": "Frontend Developer", "salary": 52000 },
+    { "id": 13, "name": "Karen Adams", "position": "Backend Developer", "salary": 57000 },
+    { "id": 14, "name": "Leo Hernandez", "position": "HR", "salary": 49000 },
+    { "id": 15, "name": "Mia Thomas", "position": "QA Engineer", "salary": 51500 },
+    { "id": 16, "name": "Noah Scott", "position": "Developer", "salary": 53500 },
+    { "id": 17, "name": "Olivia Martinez", "position": "Manager", "salary": 63000 },
+    { "id": 18, "name": "Peter Evans", "position": "DevOps Engineer", "salary": 59000 },
+    { "id": 19, "name": "Quinn Walker", "position": "Product Manager", "salary": 66000 },
+    { "id": 20, "name": "Rachel Young", "position": "Support Engineer", "salary": 48000 }
+  ]
+  
